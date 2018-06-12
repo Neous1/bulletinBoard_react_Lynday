@@ -7,8 +7,8 @@ class Note extends Component{
             <div className = "note">
                 <p>Learn React</p>
                 <span>
-                    <button><FaPencil /></button>
-                    <button><FaTrash /></button>
+                    <button id='edit'><FaPencil /></button>
+                    <button id = 'remove'><FaTrash /></button>
                 </span>
                     
             </div>

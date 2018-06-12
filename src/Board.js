@@ -12,14 +12,27 @@ class Board extends Component {
                 {
                     id: 34,
                     note: "email Evony"
+                },
+                {
+                    id: 35,
+                    note: "Order Printer ink"
                 }
             ]
         }
+        this.eachNote = this.eachNote.bind(this)
+    }
+    eachNote(note, i){
+        return(
+            <Note key={i}
+                index ={i}>
+                {note.note}
+            </Note>
+        )
     }
     render() {
         return(
             <div className ="board">
-                <Note></Note>
+                {this.state.notes.map(this.eachNote)}
             </div>
         )
     }

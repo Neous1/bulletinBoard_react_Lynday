@@ -6,20 +6,21 @@ class Board extends Component {
         this.state = {
             notes: [
                 {
-                    id: 33,
+                    id: 0,
                     note: "Call Lisa"
                 },
                 {
-                    id: 34,
+                    id: 1,
                     note: "email Evony"
                 },
                 {
-                    id: 35,
+                    id: 2,
                     note: "Order Printer ink"
                 }
             ]
         }
         this.eachNote = this.eachNote.bind(this)
+        this.update = this.update.bind(this)
     }
 
     update(newText, i){
@@ -33,7 +34,8 @@ class Board extends Component {
     eachNote(note, i){
         return(
             <Note key={i}
-                index ={i}>
+                index ={i}
+                onChange={this.update}>
                 {note.note}
             </Note>
         )

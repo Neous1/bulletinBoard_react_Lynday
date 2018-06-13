@@ -21,7 +21,7 @@ class Note extends Component{
        })
     }
     remove(){
-        alert('removing note')
+        this.props.onRemove(this.props.index)
     }
     
     save(e){
@@ -37,7 +37,7 @@ class Note extends Component{
             <div className="note">
                 <form onSubmit={this.save}>
                     <textarea ref = {input => this._newText = input}/>
-        <button><FaFloppyO /></button>
+        <button id='save'><FaFloppyO /></button>
                 </form>
             </div>
         )

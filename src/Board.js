@@ -19,11 +19,28 @@ class Board extends Component {
                 }
             ]
         }
+        this.add = this.add.bind(this)
         this.eachNote = this.eachNote.bind(this)
         this.update = this.update.bind(this)
         this.remove = this.remove.bind(this)
+        this.nextId = this.nextId.bind(this)
     }
 
+    add(text){
+        this.setState(prevState => ({
+            note: [
+                ...prevState.notes,
+                {
+                    id : this.uniqueId,
+                    note: text
+                }
+            ]
+        }))
+    }
+    nextId(){
+        this.uniqueId = this.uniqueId || 0
+        return this.uniqueId++
+    }
     update(newText, i){
         console.log('updating item at index', i, newText)
         this.setState(prevState =>({
